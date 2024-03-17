@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Playlist {
 	private ArrayList<Song> list;
-	private double secondsPerYear = 366*24*60*60;
+	private double secondsPerYear = LocalDate.now().lengthOfYear()*24*60*60;
 	private double totalLength;
 	private double howManyDaysPerSongSecond=0.0;
 	private double howManyRealLifeSecondsPerSongSecond=0.0;
