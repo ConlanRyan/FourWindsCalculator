@@ -149,13 +149,35 @@ public class Playlist {
 		return(list.get(indexOfNextSong).getTitle()+" in "+days+" days, "+hours+" hours, "+minutes+" minutes, and "+seconds+" seconds.");
 		
 	}
+
 	
 	public String toString() {
 		String s = "";
-		
 		for(int i=0;i<list.size();i++) {
 			s+=(list.get(i).toString()+", ");
 		}
 		return s;
 	}
+
+	public String listOfRanges() {
+		String returned = "";
+		for(Song s : list) {
+			String startMonth = periodOfTimeForThisSong(s.toString()).get(0).getMonth().toString();
+			String endMonth = periodOfTimeForThisSong(s.toString()).get(1).getMonth().toString();
+
+			int startDay = periodOfTimeForThisSong(s.toString()).get(0).getDayOfMonth();
+			int endDay = periodOfTimeForThisSong(s.toString()).get(1).getDayOfMonth();
+
+			int startDayInYear = periodOfTimeForThisSong(s.toString()).get(0).getDayOfYear();
+			int endDayOfYear = periodOfTimeForThisSong(s.toString()).get(1).getDayOfYear();
+
+			int timeInBetween = endDayOfYear-startDayInYear;
+			
+			returned = returned + "\n"+s.getTitle()+" starts on the "+startDay+" of "+startMonth+", and ends on the "+endDay+" of "+endMonth+". A total run of "+timeInBetween+" days.";
+			
+		}
+		return returned;
+	}
+
+	
 }

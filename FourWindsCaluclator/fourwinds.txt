@@ -1,3 +1,6 @@
+Cold;2:36
+Lapis Lazuli;3:54
+Rose;3:16
 Smoke Rising Like Lifted Hands;1:00
 Boreas;3:30
 Glowing;3:40
@@ -23,6 +26,3 @@ A Convocation of Fauns (A Faunvocation, If You Will);0:58
 Heiroglyphs;3:00
 Passerine;3:44
 A Kindling, of Sorts;1:57
-Cold;2:36
-Lapis Lazuli;3:54
-Rose;3:16

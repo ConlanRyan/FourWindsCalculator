@@ -1,11 +1,12 @@
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Driver {
 	public static void main(String[] args) {
-		Playlist fourWinds = new Playlist("C:\\Users\\James Hunt\\Desktop\\fourwinds.txt");
+		Playlist fourWinds = new Playlist("fourwinds.txt");
 		Scanner scan = new Scanner(System.in);
-		
+
 		
 		
 		
@@ -16,8 +17,8 @@ public class Driver {
 			System.out.println("	2. Get the time until the next song starts");
 			System.out.println("	3. Find when a particular song starts and ends during the year");
 			System.out.println("	4. Find which song is playing on your birthday");
-			System.out.println("	5. Find which song is playing on a particular date\n\n");
-			
+			System.out.println("	5. Find which song is playing on a particular date");
+			System.out.println("	6. List the date ranges of all the songs\n\n");
 			String s = scan.nextLine();
 			
 			int option = Integer.parseInt(s); 
@@ -132,6 +133,22 @@ public class Driver {
 				}
 				
 			}
+			
+			if(option==6) {
+				System.out.println(fourWinds.listOfRanges());
+				System.out.print("\nWould you like to return to the menu? (y/n): ");
+				String f1 = scan.nextLine();
+				if(f1.equals("y")) {
+					loop = true;
+				}
+				else if(f1.equals("n")) {
+					loop = false;
+				}
+			}
+			
+			
+			
+			}
 		}
 		
 		
@@ -151,7 +168,4 @@ public class Driver {
 			
 		
 
-	}
-
-	
 }
