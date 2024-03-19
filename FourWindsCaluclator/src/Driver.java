@@ -4,12 +4,28 @@ import java.util.Scanner;
 
 public class Driver {
 	public static void main(String[] args) {
-		Playlist fourWinds = new Playlist("fourwinds.txt");
 		Scanner scan = new Scanner(System.in);
-
-		
-		
-		
+		System.out.print("Do you live in the northern or southern hemisphere? (n/s): ");
+		String hemisphere = scan.nextLine().toLowerCase().replace(" ", "");
+		boolean startloop = true;
+		Playlist fourWinds = new Playlist();
+	
+		while (startloop) {
+			if(hemisphere.equals("n")||hemisphere.equals("northernhemisphere")) {
+				startloop = false;
+				fourWinds = new Playlist("fourwindsNORTHERN.txt");
+			}
+			else if (hemisphere.equals("s")||hemisphere.equals("southernhemisphere")) {
+				startloop = false;
+				fourWinds = new Playlist("fourwindsSOUTHERN.txt");
+			}
+			else {
+				startloop = true;
+			}
+			
+			
+		}
+				
 		boolean loop = true;
 		while(loop) {
 			System.out.println("\nChoose an option:\n\n");
@@ -35,7 +51,7 @@ public class Driver {
 				}
 			}
 			if(option==2) {
-				System.out.println("\nThe next song will start "+fourWinds.nextSongChange());
+				System.out.println("\nThe next song is "+fourWinds.nextSongChange());
 				
 				System.out.print("\nWould you like to return to the menu? (y/n): ");
 				String b1=scan.nextLine();

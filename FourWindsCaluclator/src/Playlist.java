@@ -146,7 +146,7 @@ public class Playlist {
 		int minutes = (int)(((((secondsUntilNextSongChange/60/60/24) - days)*24) - hours)*60);
 		int seconds = (int)(((((((secondsUntilNextSongChange/60/60/24) - days)*24) - hours)*60)-minutes)*60);
 		
-		return(list.get(indexOfNextSong).getTitle()+" in "+days+" days, "+hours+" hours, "+minutes+" minutes, and "+seconds+" seconds.");
+		return(list.get(indexOfNextSong).getTitle()+". It will start in "+days+" days, "+hours+" hours, "+minutes+" minutes, and "+seconds+" seconds.");
 		
 	}
 
